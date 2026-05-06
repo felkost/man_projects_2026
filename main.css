@@ -1,0 +1,220 @@
+/* ══════════════════════════════════════════════════
+   main.css — Теми наукових робіт і конкурсів 2026
+   ══════════════════════════════════════════════════ */
+
+/* ── CSS-змінні (кольорова схема) ────────────────── */
+:root {
+    --navy:       #0d1f3c;
+    --gold:       #c9a84c;
+    --gold-light: #e8d49e;
+    --slate:      #3a506b;
+    --cream:      #f8f5ef;
+    --card-bg:    #ffffff;
+  }
+  
+  /* ── Base ─────────────────────────────────────────── */
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--navy);
+  }
+  
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+    color: #fff;
+    padding: 4rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 85%, rgba(201, 168, 76, .18) 0%, transparent 50%),
+      radial-gradient(circle at 85% 20%, rgba(201, 168, 76, .12) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  
+  .hero-eyebrow {
+    font-size: .75rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+  }
+  
+  .hero h1 span {
+    color: var(--gold);
+  }
+  
+  .hero .lead {
+    color: rgba(255, 255, 255, .75);
+    font-weight: 300;
+  }
+  
+  /* ── Search / Filter bar ──────────────────────────── */
+  .filter-bar {
+    background: var(--navy);
+    padding: .75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .3);
+  }
+  
+  .filter-bar .form-control {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: .875rem;
+  }
+  
+  .filter-bar .form-control::placeholder {
+    color: rgba(255, 255, 255, .45);
+  }
+  
+  .filter-bar .form-control:focus {
+    background: rgba(255, 255, 255, .14);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 .2rem rgba(201, 168, 76, .25);
+    color: #fff;
+  }
+  
+  .filter-bar .input-group-text {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+  }
+  
+  .badge-filter {
+    cursor: pointer;
+    font-size: .75rem;
+    font-weight: 400;
+    border: 1px solid rgba(255, 255, 255, .25);
+    background: transparent;
+    color: rgba(255, 255, 255, .75);
+    transition: all .2s;
+  }
+  
+  .badge-filter:hover,
+  .badge-filter.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+  }
+  
+  /* ── Counter strip ────────────────────────────────── */
+  .counter-strip {
+    background: var(--navy);
+    color: rgba(255, 255, 255, .6);
+    font-size: .8rem;
+    padding: .5rem 0;
+  }
+  
+  .counter-strip strong {
+    color: var(--gold);
+  }
+  
+  /* ── Topic cards ──────────────────────────────────── */
+  .topic-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(13, 31, 60, .1);
+    border-radius: .75rem;
+    transition: transform .2s, box-shadow .2s;
+    overflow: hidden;
+  }
+  
+  .topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(13, 31, 60, .12);
+  }
+  
+  .topic-card .card-accent {
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+  
+  .topic-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .topic-card .category-badge {
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: .25em .65em;
+    border-radius: 2rem;
+  }
+  
+  .topic-card h6 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--navy);
+    margin: .6rem 0 .75rem;
+  }
+  
+  .topic-card .btn-link-doc {
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--slate);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    transition: color .2s;
+  }
+  
+  .topic-card .btn-link-doc:hover {
+    color: var(--gold);
+  }
+  
+  .topic-card .btn-link-doc i {
+    font-size: .95rem;
+  }
+  
+  /* ── Category color map ───────────────────────────── */
+  .cat-iot     { background: #e8f4fd; color: #1565c0; }
+  .cat-ecology { background: #e8f5e9; color: #2e7d32; }
+  .cat-ai      { background: #f3e5f5; color: #7b1fa2; }
+  .cat-energy  { background: #fff8e1; color: #f57f17; }
+  .cat-bio     { background: #fce4ec; color: #c62828; }
+  .cat-social  { background: #e0f2f1; color: #00695c; }
+  .cat-math    { background: #e8eaf6; color: #283593; }
+  .cat-chem    { background: #efebe9; color: #4e342e; }
+  
+  /* ── Empty state ──────────────────────────────────── */
+  #no-results {
+    display: none;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--slate);
+  }
+  
+  #no-results i {
+    font-size: 2.5rem;
+    opacity: .4;
+  }
+  
+  /* ── Footer ───────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    color: rgba(255, 255, 255, .5);
+    font-size: .8rem;
+    padding: 1.5rem 0;
+  }
+  
+  footer a {
+    color: var(--gold-light);
+    text-decoration: none;
+  }
